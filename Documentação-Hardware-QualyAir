@@ -1,1 +1,50 @@
+Esta seção detalha os componentes de hardware, as ferramentas de software e a metodologia de comunicação empregados no desenvolvimento do sistema de IoT para monitoramento e purificação autônoma da qualidade do ar interno.
+
+A placa ESP32 DevKitC V4 foi selecionada como o sistema embarcado principal por sua capacidade de atender a todos os requisitos funcionais do projeto de forma eficiente e econômica.
+
+O firmware do projeto será desenvolvido na Arduino IDE (Integrated Development Environment), utilizando a linguagem C/C++ e o framework do ESP32. Para a diagramação visual e representação do hardware,
+o software Fritzing foi utilizado. Para a validação da lógica de automação, conectividade Wi-Fi e protocolo MQTT, será utilizada a plataforma de simulação online Wokwi,
+que permite a emulação do ESP32 antes da implementação no hardware físico.
+
+O ESP32, com seu processador dual-core e alto clock (até 240 MHz), é responsável por executar o firmware (código). Sua principal função é processar a lógica de automação
+
+O ESP32 possui conectividade Wi-Fi e Bluetooth (BLE) nativas e integradas. Essa é a característica que o torna ideal para projetos de IoT, pois elimina a necessidade de módulos de comunicação adicionais.
+
+O ESP32 é a fundação tecnológica que converte a eletricidade em um sistema inteligente, permitindo que o projeto cumpra seu objetivo de monitoramento em tempo real e purificação autônoma via Internet.
+
+O projeto utiliza um conjunto de componentes eletrônicos de hardware para realizar a coleta de dados e a ação corretiva.
+O sistema é composto por sensores para a entrada de informações e atuadores para a intervenção no ambiente, garantindo o ciclo completo de monitoramento e controle.
+
+Sensor de Partículas Finas (PM2.5) – SDS011
+O sensor Nova Fitness SDS011 é o componente primário para a medição da poluição atmosférica. Ele opera pelo princípio de dispersão a laser para determinar a concentração de PM2.5 e PM10 (partículas finas) no ar,
+expressa em μg/m3. Sua função essencial é fornecer o dado crucial para a decisão de purificação, identificando a presença de poeira, pólen e fumaça no ambiente.
+A importância desse monitoramento é vital, pois o PM2.5 é o poluente mais perigoso para a saúde respiratória e cardiovascular, sendo capaz de penetrar profundamente nos pulmões.
+Assim, o SDS011 é fundamental para prevenir doenças e promover a saúde ambiental, alinhado ao ODS 3. O sensor utiliza uma interface de comunicação serial (UART).
+
+Módulo Sensor de Gás e Umidade – BME680
+O módulo BME680 da Bosch é um sensor ambiental multifuncional que complementa o monitoramento.
+Além de medir temperatura, umidade e pressão, ele fornece uma leitura de Compostos Orgânicos Voláteis (COV), que serve como um indicador da poluição química do ar.
+Sua função é oferecer uma visão mais completa da qualidade do ar, detectando poluentes gasosos que são invisíveis ao sensor de partículas, bem como monitorar o conforto térmico e a umidade.
+O monitoramento de COV é crucial para o bem-estar, pois esses gases (provenientes de produtos de limpeza, tintas) podem causar irritação e problemas neurológicos.
+A comunicação com o microcontrolador é feita via interface I²C ou SPI.
+
+Módulo Relé de 5V
+O módulo relé é o componente de controle responsável por atuar como uma chave eletrônica de baixa tensão controlada digitalmente.
+Sua função é isolar e permitir que o microcontrolador ESP32, que opera em 3.3V,
+ligue e desligue o sistema de purificação que utiliza uma fonte de energia de maior potência. Este módulo é crucial para a segurança e para a automação do sistema.
+
+Sistema de Purificação (Ventilador e Filtro HEPA)
+Este é o atuador principal do projeto. O sistema de purificação consiste em um ventilador que força o ar a passar por um Filtro HEPA (High Efficiency Particulate Air).
+Sua função é realizar a ação corretiva direta no ambiente, removendo fisicamente as partículas PM2.5 e PM10 que representam risco à saúde.
+A ativação autônoma deste sistema, acionado pelo relé, garante uma resposta imediata e proativa, fundamental para a melhoria da qualidade de vida e a redução de doenças causadas pela poluição, conforme os objetivos do projeto.
+Os filtros HEPA (High Efficiency Particulate Air) são filtros mecânicos usados em sistemas de ventilação e purificação de ar para remover partículas microscópicas.
+Eles capturam poeira, pólen, esporos de mofo, pelos de animais, ácaros e algumas bactérias e vírus, retendo pelo menos 99,97% das partículas com 0,3 micrômetros de diâmetro.
+Utilizados em purificadores de ar domésticos, sistemas de HVAC, ambientes hospitalares e laboratórios, os filtros HEPA são essenciais para melhorar a qualidade do ar,
+especialmente para pessoas com alergias, asma ou sensibilidade a poluente
+
+
+
+
+
+
 
