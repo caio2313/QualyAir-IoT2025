@@ -42,7 +42,10 @@ Eles capturam poeira, pólen, esporos de mofo, pelos de animais, ácaros e algum
 Utilizados em purificadores de ar domésticos, sistemas de HVAC, ambientes hospitalares e laboratórios, os filtros HEPA são essenciais para melhorar a qualidade do ar,
 especialmente para pessoas com alergias, asma ou sensibilidade a poluente
 
-
+Plataforma de Processamento e LógicaA plataforma central para o projeto é o ESP32 DevKitC V4, selecionada por sua eficiência e sua capacidade de atender aos requisitos funcionais do projeto de IoT
+Processamento Central: O ESP32 utiliza um processador dual-core e opera com alto clock (até 240 MHz) para executar o firmware e a lógica de automação. 
+Suas principais funções são receber e interpretar os sinais dos sensores (SDS011 e BME680 e enviar o sinal de controle ao Módulo Relé2222.
+Ferramentas: O firmware é desenvolvido na Arduino IDE (linguagem C/C++), e a validação da lógica e MQTT é realizada na plataforma de simulação Wokwi3.
 
 
 
